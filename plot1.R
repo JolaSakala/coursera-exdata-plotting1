@@ -1,10 +1,10 @@
 file.name <- "./household_power_consumption.txt"
-url       <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
+url       <- "http://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
 zip.file  <- "./data.zip"
 
 # Check if the data is downloaded and download when applicable
 if (!file.exists("./household_power_consumption.txt")) {
-    download.file(url, destfile = zip.file, method = "curl")
+    download.file(url, destfile = zip.file)
     unzip(zip.file)
     file.remove(zip.file)
 }
