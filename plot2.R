@@ -24,18 +24,19 @@ DT$Date <- as.Date(DT$Date, format = "%d/%m/%Y")
 DT <- DT[DT$Date >= as.Date("2007-02-01") & DT$Date <= as.Date("2007-02-02"),]
 
 # Joining day and time to create a new posix date
-mydates <- strptime(paste(DT$Date, DT$Time, sep = " "), format = "%Y-%m-%d %H:%M:%S")
-myseconds <- as.numeric(mydates)
+DT$posix <- as.POSIXct(strptime(paste(DT$Date, DT$Time, sep = " "),
+                                format = "%Y-%m-%d %H:%M:%S"))
 
 # Convert column that we will use to correct class
 DT$Global_active_power <- as.numeric(DT$Global_active_power)
 
 # Do the graph
 png(file = "plot2.png", width = 480, height = 480, units = "px")
-plot(mydates,
-     DT$Global_active_power,
-     type = "l",
-     xlab = "",
-     ylab = "Global Active Power (kilowatts)")
+with(DT,
+     plot(posix,
+          Global_active_power,
+          type = "l",
+          xlab = "",
+          ylab = "Global Active Power (kilowatts)"))
 dev.off()  # Close the png file device
 
