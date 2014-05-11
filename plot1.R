@@ -32,7 +32,7 @@ hist(DT$Global_active_power,
      col = "red",
      main = "Global Active Power",
      xlab = "Global Active Power (kilowatts)")
-dev.off()  # Close the pdf file device
+dev.off()  # Close the png file device
 
 # # Converting the rest
 # DT$posix <- paste(DT$Date, DT$Time, sep = " ")

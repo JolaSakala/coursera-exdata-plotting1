@@ -37,5 +37,5 @@ plot(mydates,
      type = "l",
      xlab = "",
      ylab = "Global Active Power (kilowatts)")
-dev.off()  # Close the pdf file device
+dev.off()  # Close the png file device
 

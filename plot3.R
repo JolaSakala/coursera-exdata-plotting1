@@ -48,4 +48,4 @@ points(mydates,
        col = "blue")
 legend("topright", col = c("black", "blue", "red"),
        legend = c("Sub_metering_1","Sub_metering_2", "Sub_metering_3"), lty = 1)
-dev.off()  # Close the pdf file device
+dev.off()  # Close the png file device
